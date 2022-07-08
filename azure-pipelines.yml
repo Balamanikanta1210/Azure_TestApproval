@@ -43,9 +43,9 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-- task: UiPathDeploy@2
-  inputs:
-    orchestratorConnection: 'Uipath_Testing'
-    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
-    folderName: 'Test'
-    entryPoints: 'Main.xaml'
+#- task: UiPathDeploy@2
+#  inputs:
+#    orchestratorConnection: 'Uipath_Testing'
+#    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+#    folderName: 'Test'
+#    entryPoints: 'Main.xaml'
