@@ -53,7 +53,7 @@ steps:
 - task: UiPathPack@2
   inputs:
     versionType: 'ManualVersion'
-    version: '$(Build_name)'
+    version: '$(Build_version)'
     projectJsonPath: '$(Build.SourcesDirectory)'
     outputType: 'Process'
     orchestratorConnection: 'Uipath_Testing'
