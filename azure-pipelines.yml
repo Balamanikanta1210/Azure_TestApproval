@@ -54,7 +54,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Write your PowerShell commands here.
+      # Write your PowerShell commands $(Build_version).
       $(Build_version) = $(Build_Version)+1 
       Write-Host "Hello World"
 - task: UiPathPack@2
