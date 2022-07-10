@@ -25,24 +25,19 @@ steps:
 #    processName: 'Azure_Demo'
 #    folderName: 'Modren Example'
 #    user: 'uipath\balamanikanta.krishn'
-- task: UiPathPack@2
-  inputs:
-    versionType: 'CurrentVersion'
-    projectJsonPath: '$(Build.SourcesDirectory)\project.json'
-    outputType: 'Process'
-    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-    orchestratorConnection: 'Uipath_Testing'
+#- task: UiPathPack@2
+#  inputs:
+#    versionType: 'CurrentVersion'
+#    projectJsonPath: '$(Build.SourcesDirectory)\project.json'
+#    outputType: 'Process'
+#    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+#    orchestratorConnection: 'Uipath_Testing'
 
 #- task: UiPathTest@2
 #  inputs:
 #    testTarget: 'TestProject'
 #    orchestratorConnection: 'Uipath_Testing'
 #    folderName: 'Test'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
 #- task: UiPathDeploy@2
 #  inputs:
 #    orchestratorConnection: 'Uipath_Testing'
@@ -55,3 +50,16 @@ steps:
 #    projectJsonPath: '$(Build.ArtifactStagingDirectory)\project.json'
 #    orchestratorConnection: 'Uipath_Testing'
 #    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+- task: UiPathPack@2
+  inputs:
+    versionType: 'ManualVersion'
+    version: '$(Build_name)'
+    projectJsonPath: '$(Build.ArtifactStagingDirectory)'
+    outputType: 'Process'
+    orchestratorConnection: 'Uipath_Testing'
+    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
