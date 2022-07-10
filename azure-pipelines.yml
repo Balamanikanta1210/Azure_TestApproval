@@ -54,7 +54,7 @@ steps:
   inputs:
     versionType: 'ManualVersion'
     version: '$(Build_name)'
-    projectJsonPath: '$(Build.ArtifactStagingDirectory)'
+    projectJsonPath: '$(Build.ArtifactStagingDirectory)\project.json'
     outputType: 'Process'
     orchestratorConnection: 'Uipath_Testing'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
