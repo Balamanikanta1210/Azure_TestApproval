@@ -25,13 +25,13 @@ steps:
 #    processName: 'Azure_Demo'
 #    folderName: 'Modren Example'
 #    user: 'uipath\balamanikanta.krishn'
-- task: UiPathPack@2
-  inputs:
-    versionType: 'AutoVersion'
-    projectJsonPath: '$(Build.SourcesDirectory)'
-    outputType: 'Process'
-    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-    orchestratorConnection: 'Uipath_Testing'
+#- task: UiPathPack@2
+#  inputs:
+#    versionType: 'AutoVersion'
+#    projectJsonPath: '$(Build.SourcesDirectory)'
+#    outputType: 'Process'
+#    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+#    orchestratorConnection: 'Uipath_Testing'
 
 #- task: UiPathTest@2
 #  inputs:
@@ -49,3 +49,9 @@ steps:
 #    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
 #    folderName: 'Test'
 #    entryPoints: 'Main.xaml'
+- task: UiPathPack@2
+  inputs:
+    versionType: 'CurrentVersion'
+    projectJsonPath: '$(Build.ArtifactStagingDirectory)'
+    orchestratorConnection: 'Uipath_Testing'
+    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
