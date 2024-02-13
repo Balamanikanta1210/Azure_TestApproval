@@ -50,13 +50,6 @@ steps:
 #    projectJsonPath: '$(Build.ArtifactStagingDirectory)\project.json'
 #    orchestratorConnection: 'Uipath_Testing'
 #    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your PowerShell commands $(Build_version).
-      Build_version = $(Build_Version)+1 
-      Write-Host "Hello World"
 - task: UiPathPack@2
   inputs:
     versionType: 'ManualVersion'
